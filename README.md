@@ -34,4 +34,4 @@ The deployable static site is generated in `dist/`. It can be hosted on Vercel, 
 
 ## Publishing notes
 
-The site is production-build ready. When a domain is chosen, add its absolute URL and social-preview image to the Open Graph metadata. Live demo links or real product screenshots can be added later without changing the current case-study structure.
+The site is production-build ready. The Open Graph metadata in `index.html` points to `https://rafi-dahoui.vercel.app/`, with the social preview image at `public/og.png`. Project screenshots live in `public/projects/` and are set per project in `src/data.ts`.

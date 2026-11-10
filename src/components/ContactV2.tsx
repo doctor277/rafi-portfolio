@@ -1,7 +1,7 @@
 import { ArrowUpRight, Check, Copy, Download, Github, Linkedin, MapPin } from "lucide-react";
 import { useState } from "react";
 
-const email = "rafi.dahoui@umontreal.ca";
+const email = "dahoui.rafi27@gmail.com";
 
 export function ContactV2() {
   const [copied, setCopied] = useState(false);
@@ -27,10 +27,10 @@ export function ContactV2() {
   return (
     <section className="contact section-shell" id="contact">
       <div className="contact-head reveal">
-        <h2>Bring me the problem worth solving<span>.</span></h2>
+        <h2>Let&apos;s talk<span>.</span></h2>
         <div className="contact-intro">
-          <p>I’m interested in backend, full-stack, platform, and reliability-focused opportunities where careful engineering makes a visible difference.</p>
-          <span className="availability"><i /> Open to internships, collaborations, and ambitious software projects.</span>
+          <p>I&apos;m looking for backend, full-stack and platform roles: internships now, and new-grad positions after I graduate in April 2027.</p>
+          <span className="availability"><i /> Open to internships and new-grad roles in Canada.</span>
         </div>
       </div>
 
@@ -50,8 +50,7 @@ export function ContactV2() {
       <div className="location-line"><span><MapPin /> Montréal, Québec / Eastern time</span></div>
 
       <footer className="footer">
-        <div><b>Rafi Dahoui</b><span>Built with care. Tested under pressure.</span></div>
-        <div className="footer-values"><span>Real problems</span><span>Practical systems</span><span>Lasting impact</span></div>
+        <div><b>Rafi Dahoui</b><span>Built with React and Vite.</span></div>
         <div className="footer-wordmark" aria-hidden="true"><span>Rafi</span><i>/</i><span>Dahoui</span></div>
       </footer>
     </section>

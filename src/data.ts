@@ -7,96 +7,74 @@ export type Project = {
   stack: string[];
   source?: string;
   proof: string;
-  visual: "launchguard" | "pothole" | "research" | "maville";
+  visual: "launchguard" | "ghostwatch" | "pothole";
+  image?: { src: string; alt: string; caption?: string; width: number; height: number };
 };
 
 export const projects: Project[] = [
   {
     index: "01",
     name: "LaunchGuard",
-    category: "Reliability engineering",
-    short: "Know when a deployment breaks production.",
+    category: "Monitoring platform",
+    short: "Links service failures to the deployment that caused them.",
     description:
-      "An event-driven monitoring platform that connects service failures to recent deployments. It combines an authenticated React dashboard with a Spring Boot API, Kafka probe pipeline, PostgreSQL history, and full observability.",
-    stack: ["Java", "Spring Boot", "Kafka", "React", "PostgreSQL"],
+      "A Spring Boot API sends health-check jobs through Kafka to a probe worker. Results are stored in PostgreSQL, and when a service fails the backend opens an incident and records which deployment was live at the time. The React dashboard signs in with OIDC and shows controls based on role: viewer, operator or admin. Prometheus, Grafana and OpenTelemetry tracing run in the local Docker lab.",
+    stack: ["Java", "Spring Boot", "Kafka", "React", "PostgreSQL", "Docker"],
     source: "https://github.com/doctor277/launchguard",
-    proof: "187 automated tests · OIDC/RBAC · Docker · GitHub Actions",
+    proof: "Testcontainers integration tests · Playwright end-to-end flow · OIDC + RBAC · CI with CodeQL",
     visual: "launchguard",
+    image: { src: "./projects/launchguard.png", alt: "LaunchGuard dashboard", width: 1440, height: 1000 },
   },
   {
     index: "02",
-    name: "Pothole Montréal",
-    category: "Civic technology",
-    short: "Turn street reports into structured city data.",
+    name: "GhostWatch",
+    category: "Local monitoring tool",
+    short: "See what your Windows machine is doing without sending data anywhere.",
     description:
-      "A privacy-conscious mobile reporting platform with GPS-assisted positioning, PostGIS duplicate suggestions, private photo storage, and protected human moderation. AI runs only in a cautious, administrator-triggered shadow mode.",
-    stack: ["React Native", "TypeScript", "Supabase", "PostGIS", "Next.js"],
-    source: "https://github.com/doctor277/pothole-montreal",
-    proof: "Bilingual mobile flow · RLS · Private storage · Human-controlled AI",
-    visual: "pothole",
+      "A FastAPI backend collects system, process, network and Windows Event Log data, keeps history in SQLite, and streams it to a browser dashboard over WebSockets. Detections are threshold and baseline rules that explain why they fired. It only listens on localhost, redacts private data in exported reports, and has a Demo Mode with synthetic data so you can try it without scanning your own machine.",
+    stack: ["Python", "FastAPI", "SQLite", "JavaScript", "WebSockets"],
+    source: "https://github.com/doctor277/ghostwatch",
+    proof: "MIT licensed · Pytest and Playwright suites · CI on Python 3.11 and 3.13 · Localhost only",
+    visual: "ghostwatch",
+    image: {
+      src: "./projects/ghostwatch.png",
+      alt: "GhostWatch dashboard in Demo Mode",
+      caption: "Demo Mode, synthetic data",
+      width: 1440,
+      height: 900,
+    },
   },
   {
     index: "03",
-    name: "Research Lab",
-    category: "Research infrastructure",
-    short: "Backtesting infrastructure for disciplined investment research.",
+    name: "Pothole Montréal",
+    category: "Civic mobile app",
+    short: "Report a pothole from your phone and see it on a shared map.",
     description:
-      "A Python platform for testing algorithmic strategies against SPY with virtual capital, walk-forward validation, transaction costs, and explicit risk controls—built to make attractive ideas prove themselves.",
-    stack: ["Python", "Pytest", "Backtesting", "AI Agents"],
-    proof: "345 automated tests · Walk-forward validation · Bias controls",
-    visual: "research",
+      "An Expo app takes a photo, your GPS position and an adjustable map pin, then checks PostGIS for nearby reports so you can add to an existing pothole instead of creating a duplicate. Photos stay in private storage, and admins review reports in a Next.js dashboard. An OpenAI visual check only runs when an admin requests it, and it never changes a report's status on its own.",
+    stack: ["React Native", "TypeScript", "Supabase", "PostGIS", "Next.js"],
+    source: "https://github.com/doctor277/pothole-montreal",
+    proof: "English and French · Row-level security · pgTAP database tests · Admin-triggered AI only",
+    visual: "pothole",
   },
-  {
-    index: "04",
-    name: "MaVille",
-    category: "City operations",
-    short: "A city-works management platform built with a team.",
-    description:
-      "A Java and MongoDB backend for authentication, registration, and municipal service requests, integrated with Montréal roadwork and traffic APIs and delivered through hands-on team collaboration.",
-    stack: ["Java", "MongoDB", "Maven", "JUnit"],
-    proof: "Public-data integration · Backend testing · Team delivery",
-    visual: "maville",
-  },
-];
-
-export const skills = [
-  "Java",
-  "Python",
-  "TypeScript",
-  "JavaScript",
-  "SQL",
-  "Spring Boot",
-  "React",
-  "React Native",
-  "Next.js",
-  "PostgreSQL",
-  "MongoDB",
-  "Supabase",
-  "PostGIS",
-  "Kafka",
-  "AWS",
-  "Docker",
-  "Playwright",
-  "Testcontainers",
 ];
 
 export const capabilities = [
   {
     index: "01",
-    title: "Backend & distributed systems",
-    description: "Design and operate dependable services with clear boundaries, durable data, and observable failure modes.",
-    tools: ["Java", "Spring Boot", "REST APIs", "Kafka", "PostgreSQL"],
+    title: "Backend",
+    description: "REST APIs in Spring Boot and FastAPI, event pipelines with Kafka, and PostgreSQL schemas with migrations.",
+    tools: ["Java", "Spring Boot", "Python / FastAPI", "Kafka", "PostgreSQL"],
   },
   {
     index: "02",
-    title: "Product engineering",
-    description: "Build useful full-stack and mobile products from interface to persistence.",
+    title: "Full-stack and mobile",
+    description: "React and Next.js dashboards, a React Native app, and Supabase with PostGIS for location data.",
     tools: ["TypeScript", "React", "React Native", "Next.js", "Supabase", "PostGIS"],
   },
   {
     index: "03",
-    title: "Quality & delivery",
-    description: "Ship with confidence through automated testing, reproducible environments, and continuous delivery.",
+    title: "Testing and delivery",
+    description: "Unit, integration and browser tests, Docker Compose setups anyone can run, and CI on GitHub Actions.",
     tools: ["JUnit", "Pytest", "Playwright", "Testcontainers", "Docker", "GitHub Actions"],
   },
 ];
@@ -106,21 +84,21 @@ export const experience = [
     index: "01",
     place: "Université de Montréal",
     role: "B.Sc. Computer Science",
-    date: "Expected 2027",
-    note: "Deepening a technical foundation in algorithms, systems, and software engineering.",
+    date: "Expected April 2027",
+    note: "Coursework in algorithms, systems and software engineering.",
   },
   {
     index: "02",
     place: "3 Amigos",
     role: "Waiter",
-    date: "2022 — Present",
-    note: "Communication, prioritization, and composure across ten-plus tables in a high-pressure environment.",
+    date: "2022 to present",
+    note: "Handling a full section during busy service.",
   },
   {
     index: "03",
     place: "Grillades Torino",
     role: "Manager",
-    date: "2021 — 2022",
+    date: "2021 to 2022",
     note: "Led daily operations, coordinated staff, and kept service moving through peak hours.",
   },
 ];

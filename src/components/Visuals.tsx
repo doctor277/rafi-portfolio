@@ -3,7 +3,7 @@ export function SignalPanel() {
     <div className="signal-panel" role="img" aria-label="LaunchGuard incident signal illustration">
       <div className="panel-head">
         <span>Deployment timeline</span>
-        <span className="live-label"><i /> Live</span>
+        <span>Illustration</span>
       </div>
       <div className="deployment-track" aria-hidden="true">
         {['build', 'test', 'deploy', 'monitor', 'stable'].map((item, index) => (
@@ -53,70 +53,16 @@ export function SignalPanel() {
   );
 }
 
-export function LaunchGuardVisual() {
-  return (
-    <div className="project-interface launchguard-ui" aria-hidden="true">
-      <div className="interface-nav"><b><i /> LaunchGuard</b><span>Incidents</span><span>Deployments</span><span>Services</span><em>● All systems operational</em></div>
-      <div className="interface-body">
-        <div className="incident-list">
-          <h4>Incidents</h4><p>Track incidents in the context of deployments.</p>
-          {["Investigating", "Identified", "Monitoring", "Resolved"].map((label, index) => (
-            <div className={index === 0 ? "incident-row hot" : "incident-row"} key={label}>
-              <i /><b>{label}</b><span>{["14:03", "13:47", "13:28", "12:11"][index]}</span><p>{["Elevated error rate on auth service", "Traced to dependency latency", "Mitigation deployed", "Incident closed"][index]}</p>
-            </div>
-          ))}
-        </div>
-        <div className="metric-stack">
-          {['Error rate', 'Latency (p95)', 'Requests', 'CPU usage'].map((label, index) => (
-            <div className="metric-line" key={label}><span>{label}</span><i className={`bars bars-${index}`} /></div>
-          ))}
-          <div className="metric-deploy" />
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export function PotholeVisual() {
   const pins = [[14,31],[31,55],[52,38],[66,68],[78,29],[85,61]];
   return (
     <div className="project-interface map-ui" aria-hidden="true">
       <div className="map-grid" />
       <span className="map-city">Montréal</span>
+      <span className="illustration-tag">Illustration</span>
       {pins.map(([x,y], index) => <i key={index} className="map-pin" style={{left:`${x}%`,top:`${y}%`}} />)}
       <div className="map-pulse"><i /></div>
-      <div className="report-card"><span>Report</span><b>MTL-2847</b><small>Rue Saint-Denis<br />Montréal, QC</small><em>Nearby match found</em></div>
-    </div>
-  );
-}
-
-export function ResearchVisual() {
-  return (
-    <div className="project-interface research-ui">
-      <div className="research-head"><span>Backtest results</span><span>Walk-forward validation</span></div>
-      <svg viewBox="0 0 850 260" role="img" aria-label="Backtest strategy and benchmark lines">
-        <path className="chart-grid" d="M20 45H830 M20 95H830 M20 145H830 M20 195H830" />
-        <path className="benchmark-line" d="M20 210 C110 202 145 180 215 187 S335 162 410 170 S518 134 590 142 S720 116 830 122" />
-        <path className="strategy-line" d="M20 210 C100 195 148 202 215 171 S330 145 410 151 S525 104 590 117 S710 58 830 51" />
-        <line className="walk-line" x1="620" y1="25" x2="620" y2="225" />
-      </svg>
-      <div className="research-axis"><span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span></div>
-    </div>
-  );
-}
-
-export function MaVilleVisual() {
-  const rows = [
-    ["MTL-9321", "Nid-de-poule", "Av. du Parc", "En cours"],
-    ["MTL-9317", "Éclairage", "Rue Beaubien", "Planifiée"],
-    ["MTL-9304", "Collecte", "Rue Saint-Zotique", "Complétée"],
-    ["MTL-9288", "Signalisation", "Boul. Rosemont", "En cours"],
-  ];
-  return (
-    <div className="project-interface maville-ui">
-      <div className="mv-head"><b>MaVille</b><span>Demandes</span><span>Carte</span><span>Équipes</span></div>
-      <div className="mv-row mv-label"><span>#</span><span>Type</span><span>Lieu</span><span>Statut</span></div>
-      {rows.map((row) => <div className="mv-row" key={row[0]}>{row.map((cell,index) => <span key={cell} className={index === 3 ? "status" : ""}>{cell}</span>)}</div>)}
+      <div className="report-card"><span>Report</span><b>MTL-002847</b><small>Rue Saint-Denis<br />Montréal, QC</small><em>Nearby match found</em></div>
     </div>
   );
 }

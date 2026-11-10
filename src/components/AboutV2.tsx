@@ -6,20 +6,20 @@ export function AboutV2() {
     <section className="about" id="about">
       <div className="about-intro section-shell reveal">
         <div className="about-title">
-          <div className="section-marker"><span>01</span><i /> About</div>
-          <h2>Calm under pressure.<br />Precise in the system<span>.</span></h2>
+          <div className="section-marker"><i /> About</div>
+          <h2>Waiter, manager, developer<span>.</span></h2>
         </div>
         <div className="about-copy">
-          <p>Hospitality taught me to communicate clearly, prioritize what matters, and keep people aligned when the pace gets intense. I bring the same discipline to designing and operating reliable software.</p>
-          <p className="education-line">Computer science at Université de Montréal — expected 2027.</p>
+          <p>I&apos;ve worked in Montréal restaurants since 2021, first as a manager at Grillades Torino and now as a waiter at 3 Amigos. That&apos;s where I learned to stay calm when every table needs something at once, and to keep the people around me informed. I&apos;m finishing a computer science degree and building backend and full-stack projects on the side.</p>
+          <p className="education-line">B.Sc. Computer Science, Université de Montréal. Graduating April 2027.</p>
           <div className="language-line"><span>Languages</span><b>English</b><i>/</i><b>Français</b><i>/</i><b lang="ar">العربية</b></div>
         </div>
       </div>
 
       <div className="capabilities section-shell" id="capabilities">
         <header className="capabilities-head reveal">
-          <div className="section-marker"><span>02</span><i /> Capabilities</div>
-          <p>Tools and judgment for turning real problems into dependable software.</p>
+          <div className="section-marker"><i /> Capabilities</div>
+          <p>What I use, and what I&apos;ve built with it.</p>
         </header>
         <div className="capability-grid">
           {capabilities.map((capability) => (
@@ -35,8 +35,8 @@ export function AboutV2() {
 
       <div className="experience section-shell">
         <header className="experience-head reveal">
-          <div className="section-marker"><span>03</span><i /> Experience</div>
-          <p>People. Ownership. Progress.</p>
+          <div className="section-marker"><i /> Experience</div>
+          <p>Work and school</p>
         </header>
         <div className="experience-track reveal">
           {experience.slice().reverse().map((item) => (

@@ -12,7 +12,7 @@ export function Header() {
 
   return (
     <header className="site-header">
-      <a className="brand-wordmark" href="#top" aria-label="Rafi Dahoui — home">
+      <a className="brand-wordmark" href="#top" aria-label="Rafi Dahoui, home">
         <span>Rafi</span>
         <i aria-hidden="true">/</i>
         <span>Dahoui</span>

@@ -7,8 +7,8 @@ export function Hero() {
       <div className="hero-copy">
         <h1><span>Rafi</span><span>Dahoui</span></h1>
         <div className="hero-statement">
-          <p>I build reliable software for problems that matter.</p>
-          <small>Computer science student in Montréal building dependable backend systems, useful city tools, and carefully tested products.</small>
+          <p>I build backend and full-stack software, and I test it.</p>
+          <small>Computer science student at Université de Montréal, graduating in April 2027. Most of my work is in Java, TypeScript and Python.</small>
         </div>
         <div className="hero-actions">
           <a className="button button-primary" href="#work">View selected work <ArrowDown size={18} /></a>
@@ -19,7 +19,7 @@ export function Hero() {
       <div className="hero-rail">
         <span>Montréal, QC</span>
         <span>Java / TypeScript / Python</span>
-        <span>Scroll to investigate ↓</span>
+        <span>Projects below ↓</span>
       </div>
     </section>
   );
