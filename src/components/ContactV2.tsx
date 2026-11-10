@@ -43,7 +43,7 @@ export function ContactV2() {
 
       <div className="contact-links reveal">
         <a href="https://github.com/doctor277" target="_blank" rel="noreferrer"><Github /> GitHub <ArrowUpRight /></a>
-        <a href="https://linkedin.com/in/rafi-dahoui" target="_blank" rel="noreferrer"><Linkedin /> LinkedIn <ArrowUpRight /></a>
+        <a href="https://www.linkedin.com/in/rafi-dahoui-711b31148/" target="_blank" rel="noreferrer"><Linkedin /> LinkedIn <ArrowUpRight /></a>
         <a href="./Rafi-Dahoui-CV.pdf" download><Download /> Download CV <ArrowUpRight /></a>
       </div>
 
